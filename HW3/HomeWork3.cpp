@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	/* {
-		// Задание 1: Написать программу, вычисляющую выражение a * (b + (c / d))
+		 Задание 1: Написать программу, вычисляющую выражение a * (b + (c / d))
 		int a, b, c, d;
 		a = 7;
 		b = 23;
@@ -14,7 +14,7 @@ int main()
 		c = 125;
 		float f = a * (b + (float(c) / d));
 
-		//std::cout << f << std::endl;
+		std::cout << f << std::endl;
 		return 0;
 	} */
 
@@ -35,22 +35,25 @@ int main()
 	{
 		/*Задание 3:Описать трёхмерный целочисленный массив,
 		размером 3х3х3 и указатель на значения внутри массива и при помощи операции разыменования вывести на экран значение центральной ячейки получившегося куба [1][1][1]. */
+		int Field = 3;
+		int Array[3][3][3], * pArr;
+		for (int x = 0; x < Field; x++) {
+			for (int y = 0; y < Field; y++) {
+				for (int z = 0; z < Field; z++) {
+					Array[x][y][z] = (x+1) * 100 + (y+1) * 10 + z+1;
+				}
+			}
+		}
+		
+		pArr = &Array[1][1][1];
 
-		int Array[9] = { 0,0,0,0,0,0,0,0,0 }, * pArr;
+		cout << *pArr << endl; //Выводим значение через указатель
 
-		pArr = &Array[0];
-		*pArr = 0;
-
-		pArr = &Array[3];
-		*pArr = 1;
-		pArr = &Array[4];
-		*pArr = 1;
-
-		pArr = &Array[5];
-		*pArr = 1;
+		cout << Array[1][1][1] << endl; //Выводим значение массива [1][1][1]
+		
+		
 
 
-		cout << Array[0] << "_" << Array[1] << "_" << Array[2] << "\n" << Array[3] << "_" << Array[4] << "_" << Array[5] << "\n" << Array[6]<< "_"  << Array[7]<< "_" << Array[8] << endl;
 	}
 
 	{
